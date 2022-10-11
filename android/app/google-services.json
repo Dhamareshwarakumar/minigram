@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "273326871980",
+    "project_id": "instatest-cccda",
+    "storage_bucket": "instatest-cccda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273326871980:android:e450555b802790f8f7d609",
+        "android_client_info": {
+          "package_name": "com.minigram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273326871980-bsb6t9qqcdjp43tfm4prvl0uv0k4hd9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minigram",
+            "certificate_hash": "9f06ac3951e75bdbbf40486b2c7d49a84ea272b7"
+          }
+        },
+        {
+          "client_id": "273326871980-nphf6imie7gvp66otgm7ipvmfojb0d07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNnu0hrS-CZ49rIPr7RPjkqVwU7xu8ERA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273326871980-nphf6imie7gvp66otgm7ipvmfojb0d07.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273326871980-7u9h5kbkrj4coqavbej79pi2udl2egtm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.test"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

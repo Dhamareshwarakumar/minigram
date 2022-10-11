@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>273326871980-h6dclrr60s2rbc95g6op9aigbh27kfjn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.273326871980-h6dclrr60s2rbc95g6op9aigbh27kfjn</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>273326871980-9vhinei43io13a4goua95f3na7a7qlip.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAKXVmtpixNzp3s-aCzpClNJT1KU_d8yUw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>273326871980</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.minigram</string>
+	<key>PROJECT_ID</key>
+	<string>instatest-cccda</string>
+	<key>STORAGE_BUCKET</key>
+	<string>instatest-cccda.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:273326871980:ios:d3a089a9aa4f539cf7d609</string>
+</dict>
+</plist>
