@@ -7,7 +7,7 @@ import {
 import { connect, useDispatch } from 'react-redux';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import auth from '@react-native-firebase/auth';
-import database from '@react-native-firebase/database';
+import { firebase } from '@react-native-firebase/database';
 
 import Home from './screens/Home';
 import AddPost from './screens/AddPost';
@@ -15,6 +15,7 @@ import Signin from './screens/Signin';
 import Signup from './screens/Signup';
 import CustomHeader from './layout/CustomHeader';
 import EmptyContainer from './components/EmptyContainer';
+import Test from './screens/Test';
 
 import { requestPermission } from './utils/askPermission';
 
@@ -26,7 +27,7 @@ const Stack = createNativeStackNavigator();
 const App = ({ authState }) => {
   const dispatch = useDispatch();
 
-  const onAuthStateChanged = user => {
+  const onAuthStateChanged = async user => {
     if (user) {
       dispatch({
         type: IS_AUTHENTICATED,
@@ -35,7 +36,9 @@ const App = ({ authState }) => {
 
       console.log(`[App.js][onAuthStateChanged][userId]: ${user._user.uid}`);
 
-      database()
+      await firebase
+        .app()
+        .database('https://instatest-cccda-default-rtdb.asia-southeast1.firebasedatabase.app/')
         .ref(`/users/${user._user.uid}`)
         .on('value', snapshot => {
           console.log(`[App.js][onAuthStateChanged][userSnapshot]: ${JSON.stringify(snapshot.val())}`);
@@ -66,13 +69,13 @@ const App = ({ authState }) => {
 
   return (
     <Stack.Navigator
-      initialRouteName="Home"
       screenOptions={{
         header: props => <CustomHeader {...props} />
       }}
     >
       {authState.isAuthenticated ? (
         <>
+          {/* <Stack.Screen name="Test" component={Test} /> */}
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="AddPost" component={AddPost} />
         </>

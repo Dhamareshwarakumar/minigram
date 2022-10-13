@@ -1,5 +1,5 @@
 import auth from '@react-native-firebase/auth';
-import database from '@react-native-firebase/database';
+import { firebase } from '@react-native-firebase/database';
 import Snackbar from 'react-native-snackbar';
 
 
@@ -9,10 +9,11 @@ export const signUp = data => async (dispatch) => {
     auth()
         .createUserWithEmailAndPassword(email, password)
         .then(data => {
-            console.log(data);
-            console.log('User account created :)');
+            console.log('[authAction][signUp][userCreated]: ', data);
 
-            database()
+            firebase
+                .app()
+                .database('https://instatest-cccda-default-rtdb.asia-southeast1.firebasedatabase.app/')
                 .ref('/users/' + data.user.uid)
                 .set({
                     name,
@@ -23,7 +24,7 @@ export const signUp = data => async (dispatch) => {
                     uid: data.user.uid,
                 })
                 .then(() => {
-                    console.log('Data Set success');
+                    console.log('[authAction][signUp]: Data Set success');
                     Snackbar.show({
                         text: 'Account Created Successfully',
                         textColor: 'white',
@@ -45,7 +46,7 @@ export const signUp = data => async (dispatch) => {
 
 
 export const signIn = data => async (dispatch) => {
-    console.log(data);
+    console.log('[authAction][signIn][IncomingData]: ', data);
     const { email, password } = data;
 
     auth()

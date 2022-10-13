@@ -3,8 +3,7 @@ import {
     Image,
     ScrollView,
     StyleSheet,
-    TouchableOpacity,
-    View
+    TouchableOpacity
 } from 'react-native';
 import {
     Box,
@@ -15,14 +14,17 @@ import {
     Text,
     VStack
 } from 'native-base';
+import Welcome from '../assets/welcome_cats.png';
+import { connect } from 'react-redux';
+import { signIn } from '../action/auth';
+import PropTypes from 'prop-types'
 
-
-const Signin = ({ navigation }) => {
+const Signin = ({ navigation, signIn }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const doSignIn = () => {
-        alert('Aigned Up')
+        signIn({ email, password });
     };
 
     return (
@@ -30,8 +32,8 @@ const Signin = ({ navigation }) => {
             <Heading size='xl' style={styles.heading}>Welcome to MiniGram</Heading>
 
             <Image
-                source={'Welcome'}
-                style={{ width: null, height: 150, marginTop: 30 }}
+                source={Welcome}
+                style={{ width: null, height: 150, marginVertical: 30 }}
                 resizeMode='contain'
             />
 
@@ -60,7 +62,9 @@ const Signin = ({ navigation }) => {
                         variant="outline"
                         borderRadius="full"
                         onPress={doSignIn}
-                    ><Text style={{ color: '#eee' }}>SignIn</Text></Button>
+                    >
+                        <Text style={{ color: '#eee' }}>SignIn</Text>
+                    </Button>
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Signup')}
                     >
@@ -77,7 +81,12 @@ const Signin = ({ navigation }) => {
     );
 };
 
-export default Signin;
+Signin.propTypes = {
+    signIn: PropTypes.func.isRequired,
+    navigation: PropTypes.object.isRequired
+};
+
+export default connect(null, { signIn })(Signin);
 
 const styles = StyleSheet.create({
     container: {
